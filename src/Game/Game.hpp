@@ -1,6 +1,7 @@
 #pragma once
-#include <SFML/Graphics/RenderWindow.hpp>
-#include <SFML/System/Clock.hpp>
+#include <SFML/Graphics.hpp>
+#include "Tile.hpp"
+#include <vector>
 
 
 class Game {
@@ -18,6 +19,7 @@ private:
 	float m_deltaTime;
 	sf::Clock m_dtClock;
 
+
 	//INIT FUNCTIONS
 	void initWindow();
 
@@ -27,6 +29,7 @@ private:
 	void handleInput();
 	void run();
 
+	std::vector <Tile*> m_tiles;
 	
 
 public:

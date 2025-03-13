@@ -4,6 +4,17 @@
 
 Game::Game() {
 	this->initWindow();
+
+	float x{ 0 }, y{ 0 };
+	for (int i = 0; i < 1024 ; i++) {
+		m_tiles.push_back(new Tile(sf::Vector2f(x, y), m_window));
+		y += 32;
+		if (y >= 1024) {
+			x += 32;
+			y = 0;
+		}
+	}
+	
 	this->run();
 }
 
@@ -30,8 +41,10 @@ void Game::initWindow() {
 
 void Game::render() {
 	m_window->clear();
-
-	//TODO: DRAW ALL ENTITIES
+	
+	for (auto* iter : m_tiles) {
+		iter->render();
+	}
 
 	m_window->display();
 }
