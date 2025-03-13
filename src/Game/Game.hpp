@@ -22,6 +22,7 @@ private:
 
 	//INIT FUNCTIONS
 	void initWindow();
+	void initTiles();
 
 	//GAME FUNCTIONS
 	void render();
