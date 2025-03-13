@@ -1,17 +1,24 @@
 #pragma once
-#include <SFML/Graphics.hpp>
+#include <SFML/Graphics/Sprite.hpp>
+#include <SFML/Graphics/Texture.hpp>
+#include <SFML/System/Vector2.hpp>
+#include <SFML/Graphics/RenderWindow.hpp>
 
-
-class Tile {
+class Tile : public sf::Sprite {
 
 private:
 	sf::Texture m_texture;
-	sf::Sprite m_sprite;
-	sf::RenderTarget* p_window;
+	unsigned int m_type;
+	std::string m_path;
+
 
 public:
-	Tile() {}
-	Tile(sf::Vector2f& pos, sf::RenderWindow* target);
+	Tile(sf::Vector2f& pos, unsigned int tileType);
 	~Tile();
-	void render();
 };
+
+/*
+1 - GRASS
+2 - WOOD
+3 - WATER
+*/

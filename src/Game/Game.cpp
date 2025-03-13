@@ -1,18 +1,18 @@
 #include "Game/Game.hpp"
 #include <SFML/Window/Event.hpp>
-#include "Engine/Entity.hpp"
 
 Game::Game() {
 	this->initWindow();
 
 	float x{ 0 }, y{ 0 };
-	for (int i = 0; i < 1024 ; i++) {
-		m_tiles.push_back(new Tile(sf::Vector2f(x, y), m_window));
+	for (int i = 0; i < 4096 ; i++) {
+		m_tiles.push_back(new Tile(sf::Vector2f(x, y), 3));
 		y += 32;
 		if (y >= 1024) {
 			x += 32;
 			y = 0;
 		}
+
 	}
 	
 	this->run();
@@ -43,7 +43,9 @@ void Game::render() {
 	m_window->clear();
 	
 	for (auto* iter : m_tiles) {
-		iter->render();
+		if (iter->getPosition().x >= 0 && iter->getPosition().x <= m_width
+			&& iter->getPosition().y >= 0 && iter->getPosition().y <= m_height)
+			m_window->draw(*iter);
 	}
 
 	m_window->display();
@@ -66,10 +68,9 @@ void Game::run() {
 	sf::Event event;
 	while (m_window->isOpen()) {
 		
-		while (m_window->pollEvent(event)) {
-			if (event.type == sf::Event::Closed)
+		while (m_window->pollEvent(event))
+			if (event.type == sf::Event::Closed || sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
 				m_window->close();
-		}
 
 		this->handleInput();
 		this->update();

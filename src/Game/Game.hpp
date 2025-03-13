@@ -1,7 +1,7 @@
 #pragma once
-#include <SFML/Graphics.hpp>
 #include "Tile.hpp"
 #include <vector>
+#include <SFML/Graphics/RenderWindow.hpp>
 
 
 class Game {
