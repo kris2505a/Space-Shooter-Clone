@@ -18,7 +18,9 @@ project "TowerDefence"
         "src/**.hpp",
         "src/**.cpp",
         "src/Game/**.hpp",
-        "src/Game/**.cpp"
+        "src/Game/**.cpp",
+        "src/Engine/**.hpp",
+        "src/Engine/**.cpp"
     }
 
     includedirs {

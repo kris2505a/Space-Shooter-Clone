@@ -1,8 +1,10 @@
 #include "Game/Game.hpp"
 #include <SFML/Window/Event.hpp>
+#include "Engine/Entity.hpp"
 
 Game::Game() {
 	this->initWindow();
+	this->run();
 }
 
 Game::~Game() {
@@ -15,6 +17,7 @@ void Game::initWindow() {
 	m_width = 1280;
 	m_height = 720;
 	m_fps = 144;
+	m_title = "Tower Shooter";
 	m_fullScreen = false;
 	m_vSync = false;
 
@@ -44,7 +47,8 @@ void Game::handleInput() {
 	//TODO: HANDLE INPUT OF ALL ENTITIES
 }
 
-void Game::gameLoop() {
+void Game::run() {
+
 
 	sf::Event event;
 	while (m_window->isOpen()) {
@@ -57,5 +61,6 @@ void Game::gameLoop() {
 		this->handleInput();
 		this->update();
 		this->render();
+		
 	}
 }

@@ -2,6 +2,7 @@
 #include <SFML/Graphics/RenderWindow.hpp>
 #include <SFML/System/Clock.hpp>
 
+
 class Game {
 
 private:
@@ -24,7 +25,9 @@ private:
 	void render();
 	void update();
 	void handleInput();
-	void gameLoop();
+	void run();
+
+	
 
 public:
 	Game();
