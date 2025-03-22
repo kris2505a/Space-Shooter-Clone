@@ -1,5 +1,6 @@
 #pragma once
 #include "Tile.hpp"
+#include "Player.hpp"
 #include <vector>
 #include <SFML/Graphics/RenderWindow.hpp>
 
@@ -28,12 +29,15 @@ private:
 	void render();
 	void update();
 	void handleInput();
-	void run();
 
 	std::vector <Tile*> m_tiles;
+
+	Player* m_player;
 	
 
 public:
 	Game();
 	~Game();
+	void run();
+
 };

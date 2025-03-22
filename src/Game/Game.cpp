@@ -4,10 +4,11 @@
 #include <string>
 #include <iostream>	
 
+
 Game::Game() {
 	this->initWindow();
 	this->initTiles();
-	this->run();
+	m_player = new Player();
 }
 
 Game::~Game() {
@@ -17,8 +18,8 @@ Game::~Game() {
 void Game::initWindow() {
 	
 	//TEMPORARY ASSIGNMENT OF WINDOW VARIABLES DIRECTLY
-	m_width = 1280;
-	m_height = 720;
+	m_width = 1024;
+	m_height = 768;
 	m_fps = 144;
 	m_title = "Tower Shooter";
 	m_fullScreen = false;
@@ -39,7 +40,8 @@ void Game::render() {
 			&& iter->getPosition().y >= 0 && iter->getPosition().y <= m_height)
 			m_window->draw(*iter);
 	}
-
+	if(m_player)
+		m_window->draw(*m_player);
 	m_window->display();
 }
 
@@ -52,6 +54,7 @@ void Game::update() {
 
 void Game::handleInput() {
 	//TODO: HANDLE INPUT OF ALL ENTITIES
+	m_player->handleInput(m_deltaTime);
 }
 
 void Game::run() {
@@ -75,20 +78,16 @@ void Game::initTiles() {
 	
 	
 	float x{ 0 }, y{ 0 };
-	std::vector<unsigned int> type{ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
-		1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
-		1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 3, 3, 3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 3, 3, 3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 2, 2, 2,
-		3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 2, 2, 2, 3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 2, 2, 2, 3, 3, 1, 1, 1, 1, 1, 1,
-		1, 1, 1, 1, 1, 1, 1, 3, 3, 2, 2, 2, 3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 3, 3, 3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3,
-		3, 3, 3, 3, 3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
-	};
-	for (int i = 0; i < type.size(); i++) {
+	
+
+	for (int i = 0; i < 768; i++) {
 				
-		m_tiles.push_back(new Tile(sf::Vector2f(x, y), type[i]));
+		m_tiles.push_back(new Tile(sf::Vector2f(x, y), 1));
 		y += 32;
-		if (y >= type.size()) {
+		if (y >= 768) {
 			x += 32;
 			y = 0;
 		}
 	}
 }
+
