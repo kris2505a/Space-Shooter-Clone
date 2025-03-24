@@ -1,0 +1,75 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Graphics Programming\\Space-Shooter-Clone\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{86BC144E-F2D2-12E4-3B4A-9E05A79FE36B}|SpaceShooterClone.vcxproj|D:\\Graphics Programming\\Space-Shooter-Clone\\src\\Game\\Game.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{86BC144E-F2D2-12E4-3B4A-9E05A79FE36B}|SpaceShooterClone.vcxproj|solutionrelative:src\\Game\\Game.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{86BC144E-F2D2-12E4-3B4A-9E05A79FE36B}|SpaceShooterClone.vcxproj|D:\\Graphics Programming\\Space-Shooter-Clone\\src\\Game\\Game.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{86BC144E-F2D2-12E4-3B4A-9E05A79FE36B}|SpaceShooterClone.vcxproj|solutionrelative:src\\Game\\Game.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{86BC144E-F2D2-12E4-3B4A-9E05A79FE36B}|SpaceShooterClone.vcxproj|D:\\Graphics Programming\\Space-Shooter-Clone\\src\\Game\\Player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{86BC144E-F2D2-12E4-3B4A-9E05A79FE36B}|SpaceShooterClone.vcxproj|solutionrelative:src\\Game\\Player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Player.cpp",
+              "DocumentMoniker": "D:\\Graphics Programming\\Space-Shooter-Clone\\src\\Game\\Player.cpp",
+              "RelativeDocumentMoniker": "src\\Game\\Player.cpp",
+              "ToolTip": "D:\\Graphics Programming\\Space-Shooter-Clone\\src\\Game\\Player.cpp",
+              "RelativeToolTip": "src\\Game\\Player.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-03-24T17:19:06.67Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Game.cpp",
+              "DocumentMoniker": "D:\\Graphics Programming\\Space-Shooter-Clone\\src\\Game\\Game.cpp",
+              "RelativeDocumentMoniker": "src\\Game\\Game.cpp",
+              "ToolTip": "D:\\Graphics Programming\\Space-Shooter-Clone\\src\\Game\\Game.cpp",
+              "RelativeToolTip": "src\\Game\\Game.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-03-24T17:18:08.106Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Game.hpp",
+              "DocumentMoniker": "D:\\Graphics Programming\\Space-Shooter-Clone\\src\\Game\\Game.hpp",
+              "RelativeDocumentMoniker": "src\\Game\\Game.hpp",
+              "ToolTip": "D:\\Graphics Programming\\Space-Shooter-Clone\\src\\Game\\Game.hpp",
+              "RelativeToolTip": "src\\Game\\Game.hpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-03-24T17:17:59.667Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

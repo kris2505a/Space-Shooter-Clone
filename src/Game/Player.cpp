@@ -21,8 +21,11 @@ void Player::update(float& deltaTime) {
 }
 
 void Player::handleInput(float& deltaTime) {
+
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
-		this->rotate(-15);
+		this->rotate(-90 * deltaTime);
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
+		this->rotate(90 * deltaTime);
 }
 
 

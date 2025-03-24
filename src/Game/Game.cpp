@@ -7,7 +7,6 @@
 
 Game::Game() {
 	this->initWindow();
-	this->initTiles();
 	m_player = new Player();
 }
 
@@ -21,7 +20,7 @@ void Game::initWindow() {
 	m_width = 1024;
 	m_height = 768;
 	m_fps = 144;
-	m_title = "Tower Shooter";
+	m_title = "Space Shooter";
 	m_fullScreen = false;
 	m_vSync = false;
 
@@ -35,11 +34,6 @@ void Game::initWindow() {
 void Game::render() {
 	m_window->clear();
 	
-	for (auto* iter : m_tiles) {
-		if (iter->getPosition().x >= 0 && iter->getPosition().x <= m_width
-			&& iter->getPosition().y >= 0 && iter->getPosition().y <= m_height)
-			m_window->draw(*iter);
-	}
 	if(m_player)
 		m_window->draw(*m_player);
 	m_window->display();
@@ -73,21 +67,3 @@ void Game::run() {
 		
 	}
 }
-
-void Game::initTiles() {
-	
-	
-	float x{ 0 }, y{ 0 };
-	
-
-	for (int i = 0; i < 768; i++) {
-				
-		m_tiles.push_back(new Tile(sf::Vector2f(x, y), 1));
-		y += 32;
-		if (y >= 768) {
-			x += 32;
-			y = 0;
-		}
-	}
-}
-
