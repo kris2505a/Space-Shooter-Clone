@@ -1,4 +1,4 @@
-workspace "TowerDefence"
+workspace "Space Shooter Clone"
     architecture "x64"
     configurations {
         "Debug",
@@ -7,7 +7,7 @@ workspace "TowerDefence"
 
 outputdir = "%{cfg.buildcfg}-%{cfg.architecture}"
 
-project "TowerDefence"
+project "SpaceShooterClone"
     kind "ConsoleApp"
     language "C++"
 
