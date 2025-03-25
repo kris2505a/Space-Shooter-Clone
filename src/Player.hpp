@@ -19,6 +19,8 @@ private:
 
 	void movePlayer(int x, int y, float& deltaTime);
 	void rotatePlayer(float& deltaTime);
+	void limitPlayer();
+
 public:
 	Player(const sf::RenderWindow* window);
 	~Player();

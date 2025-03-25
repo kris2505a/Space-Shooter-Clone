@@ -20,7 +20,7 @@ Player::Player(const sf::RenderWindow* window) : p_targetWindow(window) {
 }
 
 void Player::update(float& deltaTime) {
-
+	this->limitPlayer();	
 }
 
 void Player::handleInput(float& deltaTime) {
@@ -47,10 +47,28 @@ void Player::rotatePlayer(float& deltaTime) {
 	auto mousePos = sf::Mouse::getPosition(*p_targetWindow);
 	sf::Vector2f deltaPos = this->getPosition() - sf::Vector2f(mousePos);
 	int angle = std::atan2(deltaPos.x, deltaPos.y) * 180 / 3.141592f;
-	this->rotate(angle);
-	printf("%d\n", angle);
+	this->setRotation(-1 * (angle));
+	// printf("%d\n", angle);
 }
 
 Player::~Player() {
 
+}
+
+void Player::limitPlayer() {
+	sf::Vector2f deltaPos = this->getPosition();
+	
+	if (deltaPos.x < m_texture.getSize().x / 2)
+		deltaPos.x = m_texture.getSize().x / 2;
+	
+	if (deltaPos.x > ((p_targetWindow->getSize().x - m_texture.getSize().x) + (m_texture.getSize().x / 2)))
+		deltaPos.x = (p_targetWindow->getSize().x - m_texture.getSize().x) + (m_texture.getSize().x / 2);
+	
+	if (deltaPos.y < m_texture.getSize().y / 2)
+		deltaPos.y = m_texture.getSize().y / 2;
+	
+	if (deltaPos.y > ((p_targetWindow->getSize().y - m_texture.getSize().y) + (m_texture.getSize().y / 2)))
+		deltaPos.y = (p_targetWindow->getSize().y - m_texture.getSize().y) + (m_texture.getSize().y / 2);
+	
+	this->setPosition(deltaPos);
 }

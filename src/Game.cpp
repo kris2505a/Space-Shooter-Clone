@@ -34,8 +34,7 @@ void Game::initWindow() {
 void Game::render() {
 	m_window->clear();
 	
-	if(m_player)
-		m_window->draw(*m_player);
+	m_window->draw(*m_player);
 	m_window->display();
 }
 
@@ -44,6 +43,7 @@ void Game::update() {
 	m_deltaTime = m_dtClock.restart().asSeconds();
 
 	//TODO: UPDATE ALL ENTITIES
+	m_player->update(m_deltaTime);
 }
 
 void Game::handleInput() {
