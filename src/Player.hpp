@@ -7,6 +7,9 @@
 class Player : public sf::Sprite {
 
 private:
+
+	const sf::RenderWindow* p_targetWindow;
+
 	sf::Texture m_texture;
 	std::string m_path;
 	float m_speed;
@@ -14,8 +17,10 @@ private:
 	unsigned int m_ammo;
 	unsigned int m_ammoDamage;
 
+	void movePlayer(int x, int y, float& deltaTime);
+	void rotatePlayer(float& deltaTime);
 public:
-	Player();
+	Player(const sf::RenderWindow* window);
 	~Player();
 
 	void update(float& deltaTime);

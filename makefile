@@ -9,7 +9,7 @@ BUILD_DIR = build
 LIB_DIR = thirdparty/SFML/lib
 
 # Executable name
-TARGET = RPG
+TARGET = SpaceShooter
 
 # Sources and objects
 SOURCES = $(wildcard $(SRC_DIR)/**/*.cpp) $(wildcard $(SRC_DIR)/*.cpp)

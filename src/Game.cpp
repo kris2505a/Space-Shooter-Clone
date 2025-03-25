@@ -1,4 +1,4 @@
-#include "Game/Game.hpp"
+#include "Game.hpp"
 #include <SFML/Window/Event.hpp>
 #include <fstream>
 #include <string>
@@ -7,7 +7,7 @@
 
 Game::Game() {
 	this->initWindow();
-	m_player = new Player();
+	m_player = new Player(m_window);
 }
 
 Game::~Game() {
