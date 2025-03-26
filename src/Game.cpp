@@ -8,6 +8,7 @@
 Game::Game() {
 	this->initWindow();
 	m_player = new Player(m_window);
+	m_states.pushState(new State());
 }
 
 Game::~Game() {
