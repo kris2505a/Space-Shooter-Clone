@@ -22,3 +22,19 @@ void StateMachine::update(float& deltaTime) {
 void StateMachine::handleInput(float& deltaTime) {
     m_states.top()->handleInput(deltaTime);
 }
+
+void StateMachine::pushState(State* state) {
+    m_states.push(state);
+}
+
+void StateMachine::popState() {
+    
+    auto currentState = this->getCurrentState();
+    m_states.pop();
+    delete currentState;
+
+}
+
+State* StateMachine::getCurrentState() const {
+    return m_states.top();
+}

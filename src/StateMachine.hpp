@@ -15,4 +15,8 @@ public:
     void update (float& deltaTime);
     void handleInput (float& deltaTime);
 
+    void pushState(State* state);
+    void popState();
+
+    State* getCurrentState() const;
 };
