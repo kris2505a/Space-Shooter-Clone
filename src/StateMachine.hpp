@@ -18,5 +18,9 @@ public:
     void pushState(State* state);
     void popState();
 
-    State* getCurrentState() const;
+    //INLINE FUNCTIONS
+    inline State* getCurrentState() const { return m_states.top(); }
+    inline bool isEmpty() const { return m_states.empty(); }
+    inline bool shouldEnd() const { return m_states.top()->endState(); }
+    inline bool shouldPause() const { return m_states.top()->pauseState(); }
 };

@@ -35,6 +35,3 @@ void StateMachine::popState() {
 
 }
 
-State* StateMachine::getCurrentState() const {
-    return m_states.top();
-}

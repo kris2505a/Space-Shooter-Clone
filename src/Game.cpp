@@ -34,7 +34,10 @@ void Game::initWindow() {
 void Game::render() {
 	m_window->clear();
 	
-	m_window->draw(*m_player);
+	if(!m_states.isEmpty()) {
+		m_states.getCurrentState()->render(m_window);
+	}
+	
 	m_window->display();
 }
 
@@ -43,12 +46,17 @@ void Game::update() {
 	m_deltaTime = m_dtClock.restart().asSeconds();
 
 	//TODO: UPDATE ALL ENTITIES
-	m_player->update(m_deltaTime);
+	if(!m_states.isEmpty()) {
+		m_states.getCurrentState()->update(m_deltaTime);
+	}
+
 }
 
 void Game::handleInput() {
 	//TODO: HANDLE INPUT OF ALL ENTITIES
-	m_player->handleInput(m_deltaTime);
+	if(!m_states.isEmpty()) {
+		m_states.getCurrentState()->handleInput(m_deltaTime);
+	}
 }
 
 void Game::run() {

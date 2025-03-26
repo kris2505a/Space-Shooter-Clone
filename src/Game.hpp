@@ -1,5 +1,6 @@
 #pragma once
 #include "Player.hpp"
+#include "StateMachine.hpp"
 #include <vector>
 #include <SFML/Graphics/RenderWindow.hpp>
 
@@ -19,7 +20,6 @@ private:
 	float m_deltaTime;
 	sf::Clock m_dtClock;
 
-
 	//INIT FUNCTIONS
 	void initWindow();
 
@@ -28,6 +28,8 @@ private:
 	void update();
 	void handleInput();
 
+	//STATE MACHINE
+	StateMachine m_states;
 
 	Player* m_player;
 	
