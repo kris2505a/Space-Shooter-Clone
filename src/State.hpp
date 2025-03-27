@@ -7,13 +7,12 @@ class State {
 private:
     bool m_endState;
     bool m_pauseState;
-    sf::CircleShape circle;
 
 public:
-    State() : m_endState(false) { circle.setRadius(50.f); }
+    State() : m_endState(false) { }
     virtual ~State() { }
 
-    virtual void render (sf::RenderWindow* targetWindow) { targetWindow->draw(circle); }
+    virtual void render (sf::RenderWindow* targetWindow) { }
     virtual void update (const float& deltaTime) { }
     virtual void handleInput (const float& deltaTime) { }
 
